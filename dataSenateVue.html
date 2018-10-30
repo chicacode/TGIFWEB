@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--CSS-->
+
+    <link rel="stylesheet" href="senate-data.css">
+
+    <title>Senate TGIF</title>
+</head>
+
+<body>
+    <div class="container" id="vue-app">
+
+        <header>
+
+            <div class="logo">
+                <img src="logo.png">
+            </div>
+
+            <div class="envelope">
+                <img src="envelope.png" alt="envelope">
+            </div>
+
+            <div class="linkcontact">
+                <a href="mailto:info@tgif.net">info@tgif.net</a>
+
+            </div>
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="home-page.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Congress 113</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="house-data.html">House</a>
+                                <a class="dropdown-item" href="#"></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="senate-data.html">Senate</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Attendance</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="house_attendance.html">House</a>
+                                <a class="dropdown-item" href="#"></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="senate_attendance.html">Senate</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Party Loyalty</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="house_party.html">House</a>
+                                <a class="dropdown-item" href="#"></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="senate_party.html">Senate</a>
+                            </div>
+                        </li>
+
+
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+        <!--Table container-->
+        <section>
+            <div>
+                <div class="p2">
+                    <h2>Senators</h2>
+                    <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+                </div>
+                <div class="party">
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="inlineLabel1">Filter by Party:</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input v-on:click="filterParty" type="checkbox" id="R" value="R">
+                        <label class="form-check-label" for="inlineCheckbox1">Republican</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input v-on:click="filterParty" type="checkbox" id="D" value="D">
+                        <label class="form-check-label" for="inlineCheckbox2">Democrat</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input v-on:click="filterParty" type="checkbox" id="I" value="I">
+                        <label class="form-check-label" for="inlineCheckbox3">Independent</label>
+                    </div>
+
+                </div>
+
+
+                <div class="state">
+
+                    <select id="menudropdown" v-model="menudropdown" v-on:change="filterParty">
+                 
+             <option v-for="state in uStates" v-bind:value="state">{{state}}
+             </option>
+
+                 </select>
+                </div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Fullname</th>
+                            <th>Party</th>
+                            <th>State</th>
+                            <th>Seniority</th>
+                            <th>Votes / with Party</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="data-senate" class="data-state">
+
+                        <tr v-for="member in filters">
+                            <td><a v-bind:href="member.url">{{member.first_name}} {{member.middle_name}} {{member.last_name}}</a></td>
+                            <td>{{member.party}}</td>
+                            <td>{{member.state}}</td>
+                            <td>{{member.seniority}}</td>
+                            <td>{{member.votes_with_party_pct}}</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+        </section>
+    </div>
+
+</body>
+
+<footer class="footer">
+    <div class="foot">
+        <p>© 2016<a style="color:#0a93a6; text-decoration:none;" href="#"> </a>| All rights reserved</p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+
+<script type="text/javascript" src="SenateVue.js">
+</script>
+
+</html>

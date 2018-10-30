@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+
+    <!-- Bootstrap CSS -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="senate-data.css">
+
+    <title>House TGIF</title>
+</head>
+<!-- Start body -->
+
+<body>
+    <div id="houseD" class="container">
+        <header>
+
+            <div class="logo">
+                <img src="images.png">
+            </div>
+
+            <div class="envelope">
+                <img src="envelope.png" alt="envelope">
+            </div>
+
+            <div class="linkcontact">
+                <a href="mailto:info@tgif.net">info@tgif.net</a>
+            </div>
+
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="home-page.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Congress 113</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="house-data.html">House</a>
+                                <a class="dropdown-item" href="#"></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="senate-data.html">Senate</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Attendance</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="house_attendance.html">House</a>
+                                <a class="dropdown-item" href="#"></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="senate_attendance.html">Senate</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Party Loyalty</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="house_party_loyalty.html">House</a>
+                                <a class="dropdown-item" href="#"></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="senate_party.html">Senate</a>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+        <!--Table container-->
+        <section>
+            <div class="p2">
+                <h2>Congressmen</h2>
+                <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
+                <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+
+                <div class="party">
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="inlineLabel1">Filter by Party:</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="R" type="checkbox" id="R" value="R">
+                        <label class="form-check-label" for="inlineCheckbox1">Republican</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="D" type="checkbox" id="D" value="D">
+                        <label class="form-check-label" for="inlineCheckbox2">Democrat</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="I" type="checkbox" id="I" value="I">
+                        <label class="form-check-label" for="inlineCheckbox3">Independent</label>
+                    </div>
+
+                </div>
+
+
+                <div class="state">
+
+                    <select id="menudropdown-house">
+                    
+                 </select>
+                </div>
+
+
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Fullname</th>
+                            <th>Party</th>
+                            <th>State</th>
+                            <th>Seniority</th>
+                            <th>Votes / with Party</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody id="house">
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!--<script type="text/javascript" src="tgif_data_senate.js">
+    </script>-->
+
+    <!--<script type="text/javascript" src="tgif_data_house.js"></script>-->
+    <!--    <script type="text/javascript" src="data-house.js"></script>-->
+<script type="text/javascript" src="house_main.js"></script>
+</body>
+
+
+<footer class="footer">
+    <div class="foot">
+        <p>© 2016<a style="color:#0a93a6; text-decoration:none;" href="#"> </a>| All rights reserved</p>
+    </div>
+</footer>
+
+</html>

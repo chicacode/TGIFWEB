@@ -1,0 +1,112 @@
+[aria-expanded="false"] > .expanded,
+[aria-expanded="true"] > .collapsed {
+    display: none;
+}
+
+.container{
+    margin-top: 50px;
+}
+
+/* navBar */
+.state{
+    position:relative;
+    bottom: 25px;
+    left: 800px;
+    
+}
+.dropdown > button{
+    position: relative;
+    bottom: 30px;
+    left: 110px;
+    
+}
+
+button .expanded{
+    text-decoration: inherit;
+    float: left;
+    margin: 25px;
+}
+
+.linkcontact {
+    
+position: relative;
+left: 880px;
+text-decoration: underline;
+bottom: 53px;
+}
+
+
+.party{
+    margin-top: 50px;
+}
+p{
+    text-align: justify;
+}
+
+.logo > img{
+    width: 120px;
+    margin-top: 20px;
+}
+.envelope > img{
+    width: 30px;
+    position: relative;
+    left: 850px;
+    bottom: 25px;
+}
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 20px;
+}
+/*paragraph*/
+.p2{
+    
+    margin-top: 60px;
+    
+}
+.p3{
+    
+    width: 600px;
+    margin-top: 20px;
+}
+
+/*tables*/
+#senate_glance{
+    padding: 1%;
+    text-align: justify;
+    
+}
+.flex-container{
+    display: inline-flex;
+    background-color: lightgray;
+    margin-top: 20px;
+    width: 1100px;
+}
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 30px;
+  padding: 20px;
+}
+/* Footer */
+
+footer{
+   margin-top: 50px;
+    height: 35px;
+    text-align: center;
+    color: gray;
+    background-color: aliceblue;
+    width: 1110px;
+    margin-left: 85px;
+    margin: auto;
+}
+
+footer p {
+    padding: 10.5px;
+    margin: 0px;
+    margin-top: 20px;
+    line-height: 100%;
+}
+.foot > p{
+    text-align: center;
+}
